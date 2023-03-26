@@ -30,7 +30,7 @@ class LoginPage extends StatelessWidget {
                 flex: 3,
               ),
               Image.asset(
-                "images/logonobg.png",
+                "images/logo.png",
                 height: 230,
               ),
               Spacer(flex: 6),
