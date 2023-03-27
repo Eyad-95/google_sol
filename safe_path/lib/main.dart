@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './widgets/buttons.dart';
 
 void main() {
   runApp(const WelcomeScreen());
@@ -20,85 +21,37 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Login Page",
-      home: Scaffold(
-        backgroundColor: Color.fromRGBO(0, 103, 245, 1),
-        body: Center(
-          child: Column(
-            children: [
-              Spacer(
-                flex: 3,
-              ),
+      home: Builder(builder: (context) {
+        return Scaffold(
+          body: Stack(
+            children: <Widget>[
               Image.asset(
-                "images/logo.png",
-                height: 230,
+                "images/main_bg.png",
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                fit: BoxFit.cover,
               ),
-              Spacer(flex: 6),
-              Container(
-                margin: EdgeInsets.only(bottom: 40),
-                child: Text(
-                  "You are finally safe!",
-                  style: TextStyle(color: Colors.white, fontSize: 25),
-                ),
-              ),
-              Expanded(
-                flex: 3,
-                child: Container(
-                  margin: EdgeInsets.only(right: 20, left: 20, bottom: 10),
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-
-                      backgroundColor: Colors.white,
-                      minimumSize: const Size.fromHeight(50), // NEW
-                    ),
-                    onPressed: () {},
-                    child: Text(
-                      "Sign Up",
-                      style: TextStyle(
-                          color: Color.fromRGBO(0, 103, 245, 1),
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold),
-                    ),
+              Column(
+                children: [
+                  SizedBox(
+                    height: 50,
                   ),
-                ),
-              ),
-              Expanded(
-                flex: 3,
-                child: Container(
-                  margin: EdgeInsets.only(right: 20, left: 20, bottom: 10),
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      backgroundColor: Colors.white,
-                      minimumSize: const Size.fromHeight(50), // NEW
-                    ),
-                    onPressed: () {},
-                    child: Text(
-                      "Log In",
-                      style: TextStyle(
-                        color: Color.fromRGBO(0, 103, 245, 1),
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                  Container(
+                    height: 400,
+                    child: Image.asset('images/logo.png'),
                   ),
-                ),
-              ),
-              Spacer(
-                flex: 1,
-              ),
-              SizedBox(
-                height: 30,
+                  Spacer(),
+                  WelcomeScreenBtn("Sign Up", Color.fromRGBO(32, 147, 238, 1)),
+                  WelcomeScreenBtn("Log In", Color.fromRGBO(32, 147, 238, 1)),
+                  SizedBox(
+                    height: 100,
+                  )
+                ],
               )
             ],
           ),
-        ),
-      ),
+        );
+      }),
     );
   }
 }
