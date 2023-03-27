@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/avatars.dart';
+import './login_page.dart';
 
 class WhoAmI extends StatelessWidget {
   const WhoAmI({super.key});
@@ -42,11 +43,11 @@ class WhoAmI extends StatelessWidget {
                     ],
                   ),
                   Spacer(),
-                  MainAvatar("Parent", "avatar"),
+                  MainAvatar("Parent", "images/parent_main.svg", goToLoginPage),
                   SizedBox(
                     height: 40,
                   ),
-                  MainAvatar("Child", "avatar"),
+                  MainAvatar("Child", "images/child_main.svg", goToLoginPage),
                   Spacer(
                     flex: 2,
                   )
@@ -55,5 +56,12 @@ class WhoAmI extends StatelessWidget {
             ],
           ),
         ));
+  }
+
+  void goToLoginPage(BuildContext context) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => LoginPage(), fullscreenDialog: true));
   }
 }

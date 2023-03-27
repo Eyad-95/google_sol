@@ -1,92 +1,109 @@
 import 'package:flutter/material.dart';
 
-class ModalBottomSheet extends StatefulWidget {
+class LoginPage extends StatefulWidget {
   @override
-  _ModalBottomSheetState createState() => _ModalBottomSheetState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _ModalBottomSheetState extends State<ModalBottomSheet> {
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Modal Bottom Sheet',
-          style: TextStyle(color: Colors.white),
-        ),
-        centerTitle: true,
-      ),
-      body: Builder(builder: (context) {
-        return Container(
-          alignment: Alignment.center,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "MODAL BOTTOM SHEET EXAMPLE",
-                style: TextStyle(
-                    fontStyle: FontStyle.italic,
-                    letterSpacing: 0.4,
-                    fontWeight: FontWeight.w600),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10.0)))),
-                onPressed: () {
-                  showModalBottomSheet(
-                      context: context,
-                      builder: (context) {
-                        return Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            ListTile(
-                              leading: new Icon(Icons.photo),
-                              title: new Text('Photo'),
-                              onTap: () {
-                                Navigator.pop(context);
-                              },
-                            ),
-                            ListTile(
-                              leading: new Icon(Icons.music_note),
-                              title: new Text('Music'),
-                              onTap: () {
-                                Navigator.pop(context);
-                              },
-                            ),
-                            ListTile(
-                              leading: new Icon(Icons.videocam),
-                              title: new Text('Video'),
-                              onTap: () {
-                                Navigator.pop(context);
-                              },
-                            ),
-                            ListTile(
-                              leading: new Icon(Icons.share),
-                              title: new Text('Share'),
-                              onTap: () {
-                                Navigator.pop(context);
-                              },
-                            ),
-                          ],
-                        );
-                      });
-                },
-                child: Text(
-                  'Click Me',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: 0.6),
-                ),
-              ),
-            ],
+      body: Stack(
+        children: [
+          Image.asset(
+            "images/main_bg.png",
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            fit: BoxFit.cover,
           ),
-        );
-      }),
+        ],
+      ),
     );
   }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+
+    Future.delayed(Duration(seconds: 0)).then((_) {
+      showModalBottomSheet(
+          context: context,
+          builder: (context) {
+            return Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                ListTile(
+                  leading: new Icon(Icons.photo),
+                  title: new Text('Photo'),
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                ),
+                ListTile(
+                  leading: new Icon(Icons.music_note),
+                  title: new Text('Music'),
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                ),
+                ListTile(
+                  leading: new Icon(Icons.videocam),
+                  title: new Text('Video'),
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                ),
+                ListTile(
+                  leading: new Icon(Icons.share),
+                  title: new Text('Share'),
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                ),
+              ],
+            );
+          });
+    });
+    super.initState();
+  }
 }
+
+
+// showModalBottomSheet(
+//                       context: context,
+//                       builder: (context) {
+//                         return Column(
+//                           mainAxisSize: MainAxisSize.min,
+//                           children: <Widget>[
+//                             ListTile(
+//                               leading: new Icon(Icons.photo),
+//                               title: new Text('Photo'),
+//                               onTap: () {
+//                                 Navigator.pop(context);
+//                               },
+//                             ),
+//                             ListTile(
+//                               leading: new Icon(Icons.music_note),
+//                               title: new Text('Music'),
+//                               onTap: () {
+//                                 Navigator.pop(context);
+//                               },
+//                             ),
+//                             ListTile(
+//                               leading: new Icon(Icons.videocam),
+//                               title: new Text('Video'),
+//                               onTap: () {
+//                                 Navigator.pop(context);
+//                               },
+//                             ),
+//                             ListTile(
+//                               leading: new Icon(Icons.share),
+//                               title: new Text('Share'),
+//                               onTap: () {
+//                                 Navigator.pop(context);
+//                               },
+//                             ),
+//                           ],
+//                         );
+//                       });
