@@ -10,7 +10,7 @@ class WelcomeScreenBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        margin: EdgeInsets.only(top: 4, bottom: 10, right: 20, left: 40),
+        margin: EdgeInsets.only(top: 4, bottom: 10, right: 30, left: 30),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
