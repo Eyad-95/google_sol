@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
+
 import '../widgets/input_fields_main.dart';
+import './identity.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -62,7 +63,7 @@ class LoginPage extends StatelessWidget {
                       MainInput('Password', 'images/lock.svg'),
                       Spacer(),
                       SignBtn("Sign In", Color.fromRGBO(32, 147, 238, 1),
-                          Color.fromRGBO(32, 147, 238, 1)),
+                          Color.fromRGBO(32, 147, 238, 1), goToHome),
                       Container(
                         alignment: Alignment.centerLeft,
                         margin: EdgeInsets.symmetric(vertical: 15),
@@ -114,7 +115,7 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                       SignBtn("Sign Up", Colors.white,
-                          Color.fromRGBO(32, 147, 238, 1)),
+                          Color.fromRGBO(32, 147, 238, 1), goToIdentity),
                       Spacer(
                         flex: 2,
                       )
@@ -128,4 +129,13 @@ class LoginPage extends StatelessWidget {
       );
     });
   }
+
+  void goToIdentity(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const IdentityVerifPage()),
+    );
+  }
+
+  void goToHome() {}
 }

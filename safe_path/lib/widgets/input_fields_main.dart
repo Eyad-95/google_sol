@@ -41,37 +41,40 @@ class SignBtn extends StatelessWidget {
   final String content;
   final Color bgColor;
   final Color borderColor;
+  final Function callBack;
 
-  SignBtn(this.content, this.bgColor, this.borderColor);
+  SignBtn(this.content, this.bgColor, this.borderColor, this.callBack);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 46,
-      child: ElevatedButton(
-        onPressed: () {},
-        child: Text(
-          content,
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-            color: (content == 'Sign In')
-                ? Colors.white
-                : Color.fromRGBO(32, 147, 238, 1),
+    return Builder(builder: (context) {
+      return Container(
+        height: 46,
+        child: ElevatedButton(
+          onPressed: () => callBack(context),
+          child: Text(
+            content,
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: (content == 'Sign In')
+                  ? Colors.white
+                  : Color.fromRGBO(32, 147, 238, 1),
+            ),
           ),
-        ),
-        style: ElevatedButton.styleFrom(
-          minimumSize: const Size.fromHeight(50),
-          backgroundColor: bgColor,
-          side: BorderSide(
-              style: BorderStyle.solid, color: borderColor, width: 2),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(10),
+          style: ElevatedButton.styleFrom(
+            minimumSize: const Size.fromHeight(50),
+            backgroundColor: bgColor,
+            side: BorderSide(
+                style: BorderStyle.solid, color: borderColor, width: 2),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(10),
+              ),
             ),
           ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

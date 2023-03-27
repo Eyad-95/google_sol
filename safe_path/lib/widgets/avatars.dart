@@ -32,11 +32,12 @@ class _MainAvatarState extends State<MainAvatar> {
               width: 168,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  alignment: Alignment.bottomCenter,
+                  alignment: Alignment.center,
                   padding: EdgeInsets.only(
                       left:
                           (widget.avatar == "images/child_main.svg") ? 10 : 15,
-                      top: (widget.avatar == "images/child_main.svg") ? 25 : 0),
+                      right:
+                          (widget.avatar == "images/child_main.svg") ? 2 : 0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(100),
                   ),
@@ -45,6 +46,7 @@ class _MainAvatarState extends State<MainAvatar> {
                 onPressed: () => widget.callBack(),
                 child: SvgPicture.asset(
                   widget.avatar,
+                  height: 130,
                 ),
               ),
             )
