@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import '../widgets/avatars.dart';
 import './login_page.dart';
 
-class WhoAmI extends StatelessWidget {
+class WhoAmI extends StatefulWidget {
   const WhoAmI({super.key});
 
+  @override
+  State<WhoAmI> createState() => _WhoAmIState();
+}
+
+class _WhoAmIState extends State<WhoAmI> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -43,11 +48,11 @@ class WhoAmI extends StatelessWidget {
                     ],
                   ),
                   Spacer(),
-                  MainAvatar("Parent", "images/parent_main.svg", goToLoginPage),
+                  MainAvatar("Parent", "images/parent_main.svg", openDialog),
                   SizedBox(
                     height: 40,
                   ),
-                  MainAvatar("Child", "images/child_main.svg", goToLoginPage),
+                  MainAvatar("Child", "images/child_main.svg", openDialog),
                   Spacer(
                     flex: 2,
                   )
@@ -58,10 +63,31 @@ class WhoAmI extends StatelessWidget {
         ));
   }
 
-  void goToLoginPage(BuildContext context) {
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => LoginPage(), fullscreenDialog: true));
+  void openDialog() async {
+    String? _selected =
+        await Navigator.of(context).push(MaterialPageRoute<String>(
+            builder: (BuildContext context) {
+              return LoginPage();
+            },
+            fullscreenDialog: true));
+    if (_selected != null)
+      setState(() {
+        _selected = _selected;
+      });
   }
 }
+
+
+
+
+
+
+
+// void goToLoginPage(BuildContext context) {
+    // Navigator.push(
+    //     context,
+    //     MaterialPageRoute(
+    //         builder: (context) => LoginPage(), fullscreenDialog: true));
+  // }
+
+

@@ -35,6 +35,7 @@ class WelcomeScreenBtn extends StatelessWidget {
     Navigator.push(
         context,
         MaterialPageRoute(
-            builder: (context) => WhoAmI(), fullscreenDialog: true));
+          builder: (context) => WhoAmI(),
+        ));
   }
 }
