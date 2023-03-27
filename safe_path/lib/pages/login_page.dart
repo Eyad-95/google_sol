@@ -47,13 +47,77 @@ class LoginPage extends StatelessWidget {
                         child: Text(
                           'Welcome Back',
                           style: TextStyle(
-                              fontSize: 36,
+                              fontSize: 38,
                               color: Color.fromRGBO(32, 147, 238, 1),
                               fontWeight: FontWeight.bold),
                         ),
                       ),
+                      Spacer(
+                        flex: 2,
+                      ),
+                      MainInput('E-mail', 'images/mail_check.svg'),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      MainInput('Password', 'images/lock.svg'),
                       Spacer(),
-                      MainInput()
+                      SignBtn("Sign In", Color.fromRGBO(32, 147, 238, 1),
+                          Color.fromRGBO(32, 147, 238, 1)),
+                      Container(
+                        alignment: Alignment.centerLeft,
+                        margin: EdgeInsets.symmetric(vertical: 15),
+                        child: InkWell(
+                          child: Text(
+                            'Forgot your password?',
+                            style: TextStyle(
+                                color: Color.fromRGBO(32, 147, 238, 1),
+                                fontWeight: FontWeight.bold,
+                                decoration: TextDecoration.underline),
+                          ),
+                          onTap: () {},
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Expanded(
+                            child: Container(
+                              height: 1.0,
+                              width: availableWidth / 3,
+                              color: Color.fromRGBO(181, 181, 181, 1),
+                            ),
+                          ),
+                          Container(
+                            child: Text(
+                              'Or',
+                              style: TextStyle(
+                                  color: Color.fromRGBO(181, 181, 181, 1),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                            margin: EdgeInsets.symmetric(horizontal: 20),
+                          ),
+                          Expanded(
+                            child: Container(
+                              height: 1.0,
+                              width: availableWidth / 3,
+                              color: Color.fromRGBO(181, 181, 181, 1),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 15, bottom: 10),
+                        child: Text(
+                          'Don\'t have an account?',
+                          style: TextStyle(fontSize: 16),
+                        ),
+                      ),
+                      SignBtn("Sign Up", Colors.white,
+                          Color.fromRGBO(32, 147, 238, 1)),
+                      Spacer(
+                        flex: 2,
+                      )
                     ],
                   ),
                 ),
@@ -65,197 +129,3 @@ class LoginPage extends StatelessWidget {
     });
   }
 }
-
-
-
-
-// class LoginPage extends StatefulWidget {
-//   @override
-//   _LoginPageState createState() => _LoginPageState();
-// }
-
-// class _LoginPageState extends State<LoginPage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Stack(
-//         children: [
-//           Image.asset(
-//             "images/main_bg.png",
-//             height: MediaQuery.of(context).size.height,
-//             width: MediaQuery.of(context).size.width,
-//             fit: BoxFit.cover,
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-
-//   @override
-//   void initState() {
-//     Future.delayed(Duration(seconds: 0)).then((_) {
-//       showModalBottomSheet(
-//           isDismissible: false,
-//           isScrollControlled: true,
-//           context: context,
-//           builder: (context) {
-//             return Column(
-//               mainAxisSize: MainAxisSize.min,
-//               children: <Widget>[
-//                 ListTile(
-//                   leading: new Icon(Icons.photo),
-//                   title: new Text('Photo'),
-//                   onTap: () {
-//                     Navigator.pop(context);
-//                   },
-//                 ),
-//                 ListTile(
-//                   leading: new Icon(Icons.music_note),
-//                   title: new Text('Music'),
-//                   onTap: () {
-//                     Navigator.pop(context);
-//                   },
-//                 ),
-//                 ListTile(
-//                   leading: new Icon(Icons.videocam),
-//                   title: new Text('Video'),
-//                   onTap: () {
-//                     Navigator.pop(context);
-//                   },
-//                 ),
-//                 ListTile(
-//                   leading: new Icon(Icons.share),
-//                   title: new Text('Share'),
-//                   onTap: () {
-//                     Navigator.pop(context);
-//                   },
-//                 ),
-//               ],
-//             );
-//           });
-//     });
-//     super.initState();
-//   }
-// }
-
-// class LoginPage extends StatefulWidget {
-//   @override
-//   _LoginPageState createState() => _LoginPageState();
-// }
-
-// class _LoginPageState extends State<LoginPage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('My App'),
-//       ),
-//       body: Center(
-//         child: ElevatedButton(
-//           onPressed: () {},
-//           child: Text('Open Modal Sheet'),
-//         ),
-//       ),
-//     );
-//   }
-
-//   @override
-//   void initState() {
-//     Future.delayed(Duration(seconds: 0)).then((_) {
-//       showModalBottomSheet(
-//           context: context,
-//           builder: (builder) {
-//             return Container(
-//               height: 300,
-//               child: Column(
-//                 children: [Text("hi")],
-//               ),
-//             );
-//           },
-//           isDismissible: false);
-//     });
-//     super.initState();
-//   }
-// }
-
-// class LoginPage extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Flutter Learning',
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       home: MyHomePage(),
-//     );
-//   }
-// }
-
-// class MyHomePage extends StatefulWidget {
-//   @override
-//   _MyHomePageState createState() {
-//     return _MyHomePageState();
-//   }
-// }
-
-// class _MyHomePageState extends State<MyHomePage> {
-//   var _selected = "";
-//   var _test = "Full Screen";
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text("Flutter Full Screen Dialog"),
-//       ),
-//       body: Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: <Widget>[
-//             ElevatedButton(
-//               onPressed: () {
-//                 ;
-//               },
-//               child: Text("Show Dialog"),
-//             ),
-//             Text(_selected)
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-// void _openDialog() async {
-//     String? _selected =
-//         await Navigator.of(context).push(MaterialPageRoute<String>(
-//             builder: (BuildContext context) {
-//               return Scaffold(
-//                 body: Container(
-//                   width: MediaQuery.of(context).size.width,
-//                   height: MediaQuery.of(context).size.height,
-//                   padding: EdgeInsets.all(20),
-//                   color: Colors.white,
-//                   child: Column(
-//                     children: [
-//                       ElevatedButton(
-//                         onPressed: () {
-//                           Navigator.of(context).pop();
-//                         },
-//                         child: Text(
-//                           'Full Screen',
-//                           style: TextStyle(color: Colors.white),
-//                         ),
-//                       )
-//                     ],
-//                   ),
-//                 ),
-//               );
-//             },
-//             fullscreenDialog: true));
-//     if (_selected != null)
-//       setState(() {
-//         _selected = _selected;
-//       });
-//   }
-
-

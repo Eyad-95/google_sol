@@ -76,18 +76,3 @@ class _WhoAmIState extends State<WhoAmI> {
       });
   }
 }
-
-
-
-
-
-
-
-// void goToLoginPage(BuildContext context) {
-    // Navigator.push(
-    //     context,
-    //     MaterialPageRoute(
-    //         builder: (context) => LoginPage(), fullscreenDialog: true));
-  // }
-
-
