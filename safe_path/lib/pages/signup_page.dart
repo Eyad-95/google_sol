@@ -1,6 +1,8 @@
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
+import 'package:safe_path/pages/identity.dart';
+import 'package:safe_path/pages/login_page.dart';
 import '../widgets/input_fields_main.dart';
 
 class SignUp extends StatelessWidget {
@@ -40,7 +42,7 @@ class SignUp extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              MainInput("Phone Number", "phone.svg"),
+              MainInput("Phone Number", "images/phone.svg"),
               SizedBox(
                 height: 10,
               ),
@@ -60,7 +62,7 @@ class SignUp extends StatelessWidget {
                 flex: 2,
               ),
               SignBtn("Create Account", Color.fromRGBO(32, 147, 238, 1),
-                  Color.fromRGBO(32, 147, 238, 1), () {}),
+                  Color.fromRGBO(32, 147, 238, 1), goToIdentity),
               SizedBox(
                 height: 10,
               ),
@@ -74,12 +76,26 @@ class SignUp extends StatelessWidget {
                 height: 7,
               ),
               SignBtn("Sign In", Colors.white, Color.fromRGBO(32, 147, 238, 1),
-                  () {}, false),
+                  goToSignIn, false),
               Spacer()
             ],
           ),
         ),
       ),
+    );
+  }
+
+  void goToSignIn(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const LoginPage()),
+    );
+  }
+
+  void goToIdentity(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const IdentityVerifPage()),
     );
   }
 }

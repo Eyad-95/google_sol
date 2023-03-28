@@ -30,19 +30,27 @@ class IdentityVerifPage extends StatelessWidget {
           title: const Text(
             'Identity Verification',
             style: TextStyle(
-              color: Color.fromRGBO(32, 147, 238, 1),
-              fontWeight: FontWeight.bold,
-            ),
+                color: Color.fromRGBO(32, 147, 238, 1),
+                fontWeight: FontWeight.bold,
+                fontSize: 22),
           ),
         ),
         body: Container(
           padding: EdgeInsets.only(left: 40),
           child: Column(
             children: [
+              SizedBox(
+                height: 10,
+              ),
               Container(
                 padding: EdgeInsets.only(right: 40),
                 child: Text(
-                    "Enter the 4-digit code sent to you at entered number +20 100 0000 000"),
+                  "Enter the 4-digit code sent to you at entered number +20 100 0000 000",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
               Spacer(),
               IdentityField(),
@@ -59,13 +67,20 @@ class IdentityVerifPage extends StatelessWidget {
               ),
               Spacer(flex: 11),
               Confirm("Confirm", Color.fromRGBO(32, 147, 238, 1),
-                  Color.fromRGBO(32, 147, 238, 1), () {}),
+                  Color.fromRGBO(32, 147, 238, 1), goToHome),
               Spacer()
             ],
           ),
         ),
       );
     });
+  }
+
+  void goToHome(BuildContext context) {
+    // Navigator.push(
+    //   context,
+    //   MaterialPageRoute(builder: (context) => const HomePage()),
+    // );
   }
 }
 
