@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:safe_path/pages/signup_page.dart';
 
 import '../widgets/input_fields_main.dart';
 import './identity.dart';
@@ -115,7 +116,7 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                       SignBtn("Sign Up", Colors.white,
-                          Color.fromRGBO(32, 147, 238, 1), goToIdentity),
+                          Color.fromRGBO(32, 147, 238, 1), goToSignUp, false),
                       Spacer(
                         flex: 2,
                       )
@@ -137,5 +138,17 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  void goToHome() {}
+  void goToSignUp(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const SignUp()),
+    );
+  }
+
+  void goToHome(BuildContext context) {
+    // Navigator.push(
+    //   context,
+    //   MaterialPageRoute(builder: (context) => const SignUp()),
+    // );
+  }
 }

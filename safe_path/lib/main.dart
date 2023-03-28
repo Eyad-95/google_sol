@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import './widgets/buttons.dart';
+
 import './pages/welcome_screen.dart';
-import './pages/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return WelcomeScreen();
+    return MaterialApp(
+        debugShowCheckedModeBanner: false, home: WelcomeScreen());
   }
 }

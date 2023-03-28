@@ -48,11 +48,11 @@ class _WhoAmIState extends State<WhoAmI> {
                     ],
                   ),
                   Spacer(),
-                  MainAvatar("Parent", "images/parent_main.svg", openDialog),
+                  MainAvatar("Parent", "images/parent.svg", openDialog),
                   SizedBox(
                     height: 40,
                   ),
-                  MainAvatar("Child", "images/child_main.svg", openDialog),
+                  MainAvatar("Child", "images/child.svg", openDialog),
                   Spacer(
                     flex: 2,
                   )

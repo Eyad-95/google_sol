@@ -67,6 +67,11 @@ flutter:
     - images/parent_main.svg
     - images/mail_check.svg
     - images/lock.svg
+    - images/child.svg
+    - images/parent.svg
+    - images/person.svg
+    - images/age.svg
+    - images/phone.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

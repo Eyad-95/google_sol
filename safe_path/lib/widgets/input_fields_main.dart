@@ -42,8 +42,10 @@ class SignBtn extends StatelessWidget {
   final Color bgColor;
   final Color borderColor;
   final Function callBack;
+  final bool white;
 
-  SignBtn(this.content, this.bgColor, this.borderColor, this.callBack);
+  SignBtn(this.content, this.bgColor, this.borderColor, this.callBack,
+      [this.white = true]);
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +59,7 @@ class SignBtn extends StatelessWidget {
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w600,
-              color: (content == 'Sign In')
+              color: (white == true)
                   ? Colors.white
                   : Color.fromRGBO(32, 147, 238, 1),
             ),

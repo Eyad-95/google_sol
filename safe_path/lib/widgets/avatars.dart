@@ -30,23 +30,23 @@ class _MainAvatarState extends State<MainAvatar> {
             SizedBox(
               height: 168,
               width: 168,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  alignment: Alignment.center,
-                  padding: EdgeInsets.only(
-                      left:
-                          (widget.avatar == "images/child_main.svg") ? 10 : 15,
-                      right:
-                          (widget.avatar == "images/child_main.svg") ? 2 : 0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(100),
+              child: Container(
+                margin: EdgeInsets.only(top: 10),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    elevation: 0,
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.all(0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    backgroundColor: Colors.black.withOpacity(0),
                   ),
-                  backgroundColor: Color.fromRGBO(32, 147, 238, 0.7),
-                ),
-                onPressed: () => widget.callBack(),
-                child: SvgPicture.asset(
-                  widget.avatar,
-                  height: 130,
+                  onPressed: () => widget.callBack(),
+                  child: SvgPicture.asset(
+                    widget.avatar,
+                    height: 200,
+                  ),
                 ),
               ),
             )
