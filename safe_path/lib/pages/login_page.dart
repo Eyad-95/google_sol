@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:safe_path/pages/signup_page.dart';
+import 'package:safe_path/pages/fourm_page.dart';
 
 import '../widgets/input_fields_main.dart';
 import './identity.dart';
@@ -150,5 +151,11 @@ class LoginPage extends StatelessWidget {
     //   context,
     //   MaterialPageRoute(builder: (context) => const SignUp()),
     // );
+  }
+  void GoToHome(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ForumPage()),
+    );
   }
 }

@@ -40,6 +40,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_svg: ^2.0.4
+  intl: ^0.18.0
+  flutter_feather_icons: ^2.0.0+1
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -67,6 +69,102 @@ flutter:
     - images/parent_main.svg
     - images/mail_check.svg
     - images/lock.svg
+    - images/shield-alert.png
+    - images/locate-fixed.png
+    - images/auto-group-ndbb.png
+    - images/vector.png
+    - images/home.png
+    - images/shield-alert-uQh.png
+    - images/map-pin.png
+    - images/vector-ECV.png
+    - images/sort-desc.png
+    - images/x.png
+    - images/clock-1.png
+    - images/vector-jqf.png
+    - images/italic.png
+    - images/home-Q4M.png
+    - images/vector-J5j.png
+    - images/alert-octagon.png
+    - images/message-circle.png
+    - images/home-Wi1.png
+    - images/bold.png
+    - images/message-circle-osT.png
+    - images/vector-MiV.png
+    - images/x-hyw.png
+    - images/pencil.png
+    - images/auto-group-p36m.png
+    - images/vector-KKj.png
+    - images/clock-1-13s.png
+    - images/polygon-2.png
+    - images/vector-hMw.png
+    - images/underline.png
+    - images/shield-alert-D8Z.png
+    - images/search.png
+    - images/home-XiD.png
+    - images/search-XSd.png
+    - images/vector-7vd.png
+    - images/alert-octagon-NUV.png
+    - images/shield-alert-581.png
+    - images/search-c7w.png
+    - images/polygon-2-qhP.png
+    - images/send.png
+    - images/map-pin-Bzm.png
+    - images/align-justify.png
+    - images/x-Pch.png
+    - images/vector-nuj.png
+    - images/newspaper.png
+    - images/settings-button.png
+    - images/map-pin-7yo.png
+    - images/settings-button-Vnd.png
+    - images/map-pin-n8m.png
+    - images/newspaper-6cd.png
+    - images/home-szd.png
+    - images/align-left.png
+    - images/siren.png
+    - images/settings-button-child.png
+    - images/map-pin-bnd.png
+    - images/newspaper-nyT.png
+    - images/home-ypy.png
+    - images/mail.png
+    - images/shield-alert-yWd.png
+    - images/align-right.png
+    - images/lock.png
+    - images/search-YXP.png
+    - images/newspaper-EF7.png
+    - images/shield-alert-4P7.png
+    - images/vector-ehK.png
+    - images/lock-tBX.png
+    - images/vector-6KX.png
+    - images/vector-Znm.png
+    - images/user.png
+    - images/vector-1hP.png
+    - images/arrow-left.png
+    - images/phone.png
+    - images/clock-1-gwf.png
+    - images/clock-1-NUm.png
+    - images/mapsicle-map-bg.png
+    - images/mapsicle-map-bg-fMX.png
+    - images/alert-octagon-k85.png
+    - images/settings-button-dBs.png
+    - images/lock-94q.png
+    - images/newspaper-7NM.png
+    - images/x-GCd.png
+    - images/hash.png
+    - images/clock-1-v4D.png
+    - images/mapsicle-map.png
+    - images/mapsicle-map-6nH.png
+    - images/mapsicle-map-bg-uAu.png
+    - images/search-M2V.png
+    - images/newspaper-Mqo.png
+    - images/rectangle-1.png
+    - images/vector-NRB.png
+    - images/vector-xuB.png
+    - images/mail-check.png
+    - images/pavan3841.png
+    - images/img1.png
+    - images/img2.png
+    - images/img3.png
+    - images/img4.png
     - images/child.svg
     - images/parent.svg
     - images/person.svg
